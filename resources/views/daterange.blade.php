@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Daterange Filter</title>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -21,32 +22,40 @@
        <h3 >Laravel 7.28.4 - Daterange Filter in Datatables with Server-side Processing</h3>
     <br />
     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="row input-daterange">
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <button type="button" name="refresh" id="refresh" class="btn btn-primary">Afficher tous</button>
+      </div>
+      <div class="col-md-3">
         <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" readonly />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date" readonly />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button type="button" name="filter" id="filter" class="btn btn-primary">Search Date</button>
-        <button type="button" name="refresh" id="refresh" class="btn btn-default">Reload</button>
       </div>
     </div>
   <br/>
-   <div class="table-responsive">
-    <table class="table table-bordered table-striped" id="order_table">
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Customer Name</th>
-          <th>Item</th>
-          <th>Value</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-  </table>
-   </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="order_table">
+          <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Items</th>
+                <th>Value</th>
+                <th>Date</th>
+              </tr>
+          </thead>
+        </table>
+    </div>
   </div>
  </body>
 
@@ -66,7 +75,7 @@
       processing: true,
       serverSide: true,
       ajax: {
-        url:'{{ route("daterange.index") }}',
+        // url:'{{ route("daterange.index") }}',
         data:{from_date:from_date, to_date:to_date}
       },
       columns: [
@@ -92,6 +101,7 @@
         }
       ]
       });
+
     }
 
     $('#filter').click(function(){
