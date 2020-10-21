@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/daterange', 'App\Http\Controllers\DateRangeController@index');
+// Route::get('/daterange', 'App\Http\Controllers\DateRangeController@index');
+
+Route::resource('daterange', 'DateRangeController');

@@ -6,7 +6,7 @@
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laravel 5.8 - Daterange Filter in Datatables with Server-side Processing</title>
+  <title>Laravel 7.28.4 - Daterange Filter in Datatables with Server-side Processing</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -22,7 +22,7 @@
 <body>
   <div class="container">    
      <br />
-     <h3 align="center">Laravel 5.8 - Daterange Filter in Datatables with Server-side Processing</h3>
+     <h3 >Laravel 7.28.4 - Daterange Filter in Datatables with Server-side Processing</h3>
      <br />
             <br />
             <div class="row input-daterange">
