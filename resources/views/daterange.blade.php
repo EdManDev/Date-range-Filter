@@ -33,8 +33,8 @@
                     <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date" readonly />
                 </div>
                 <div class="col-md-4">
-                    <button type="button" name="filter" id="filter" class="btn btn-primary">Filter</button>
-                    <button type="button" name="refresh" id="refresh" class="btn btn-default">Refresh</button>
+                    <button type="button" name="filter" id="filter" class="btn btn-primary">Search Date</button>
+                    <button type="button" name="refresh" id="refresh" class="btn btn-default">Reload</button>
                 </div>
             </div>
             <br />
@@ -58,14 +58,14 @@
   $(document).ready(function(){
     $('.input-daterange').datepicker({
       todayBtn:'linked',
-      format:'yyyy-mm-dd',
+      format:"yyyy-mm-dd",
       autoclose:true
     });
 
   load_data();
 
-  function load_data(from_date = '', to_date = '')
-  {
+  function load_data(from_date = '', to_date = ''){
+
       $('#order_table').DataTable({
       processing: true,
       serverSide: true,
@@ -75,24 +75,24 @@
       },
       columns: [
         {
-        data:'order_id',
-        name:'order_id'
+          data:'order_id',
+          name:'order_id'
         },
         {
-        data:'order_customer_name',
-        name:'order_customer_name'
+          data:'order_customer_name',
+          name:'order_customer_name'
         },
         {
-        data:'order_item',
-        name:'order_item'
+          data:'order_item',
+          name:'order_item'
         },
         {
-        data:'order_value',
-        name:'order_value'
+          data:'order_value',
+          name:'order_value'
         },
         {
-        data:'order_date',
-        name:'order_date'
+          data:'order_date',
+          name:'order_date'
         }
       ]
       });
@@ -101,14 +101,12 @@
     $('#filter').click(function(){
       var from_date = $('#from_date').val();
       var to_date = $('#to_date').val();
-      if(from_date != '' &&  to_date != '')
-      {
-      $('#order_table').DataTable().destroy();
-      load_data(from_date, to_date);
+      if(from_date != '' &&  to_date != ''){
+        $('#order_table').DataTable().destroy();
+        load_data(from_date, to_date);
       }
-      else
-      {
-      alert('Both Date is required');
+      else{
+         alert('Both Date is required');
       }
     });
 
@@ -119,7 +117,7 @@
       load_data();
     });
 
-    });
+  });
 </script>
 
 </html>
